@@ -1,0 +1,85 @@
+{
+  "track": "nlp",
+  "model": "cointegrated/rubert-tiny2",
+  "revision": "e8ed3b0c8bbf4fb6984c3de043bf7d2f4e5969ae",
+  "dataset": "RCC-MSU/collection3",
+  "classes": [
+    "LOC",
+    "ORG",
+    "PER"
+  ],
+  "n_train": 9301,
+  "n_val": 2153,
+  "n_test": 1922,
+  "params_total": 29098303,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.5613437195715676,
+      "f1_macro": 0.5785510074917143,
+      "precision": 0.5625762381068553,
+      "recall": 0.5601165897498178
+    },
+    "random_head": {
+      "f1_micro": 0.0380824055031558,
+      "f1_macro": 0.035254710988307,
+      "precision": 0.022296034876479135,
+      "recall": 0.13043478260869565
+    }
+  },
+  "final": {
+    "f1_micro": 0.9288620392060164,
+    "f1_macro": 0.9263475953901329,
+    "precision": 0.9165450121654501,
+    "recall": 0.9415146213446638,
+    "token_f1": 0.9539302802460697,
+    "per_type": {
+      "LOC": {
+        "precision": 0.947986577181208,
+        "recall": 0.9617021276595744,
+        "f1-score": 0.9547950992817913,
+        "support": 1175
+      },
+      "ORG": {
+        "precision": 0.8386850152905199,
+        "recall": 0.8734076433121019,
+        "f1-score": 0.8556942277691107,
+        "support": 1256
+      },
+      "PER": {
+        "precision": 0.9565217391304348,
+        "recall": 0.9808917197452229,
+        "f1-score": 0.9685534591194969,
+        "support": 1570
+      }
+    }
+  },
+  "ablation": {
+    "setting": "freeze",
+    "full": {
+      "f1_micro": 0.932201363147196,
+      "f1_macro": 0.9302148873334692,
+      "precision": 0.9180405087140838,
+      "recall": 0.9468059266456157,
+      "sec": 272.4531650543213,
+      "trainable": 29098303
+    },
+    "freeze": {
+      "f1_micro": 0.6154037886340976,
+      "f1_macro": 0.5973449729319752,
+      "precision": 0.6319426670079344,
+      "recall": 0.5997085256254554,
+      "sec": 190.4258849620819,
+      "trainable": 2191
+    }
+  },
+  "errors": {
+    "correct": 3898,
+    "boundary": 148,
+    "type": 50,
+    "missed": 21,
+    "spurious": 126
+  },
+  "device": "mps",
+  "train_time_sec": 272.4531650543213,
+  "fast_mode": false
+}

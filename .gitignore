@@ -1,0 +1,7 @@
+# датасеты, прогоны и веса в репозиторий не кладём
+data/
+runs/
+*.safetensors
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
